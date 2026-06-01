@@ -11,8 +11,8 @@ function Hero() {
                     </div>
                 </div>
                 <div className="text-center">
-                    <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                        A New Way to Learn JavaScript!
+                    <h1 className="text-3xl font-bold tracking-tight text-black">
+                        Master JavaScript Interviews the Smart Way!
                     </h1>
                     <p className="mt-6 text-lg font-normal text-gray-600 sm:text-xl/8">
                         JSLeetCode is the best platform to help you enhance your JavaScript skills, expand your knowledge and prepare for technical interviews.
@@ -25,7 +25,7 @@ function Hero() {
                         >
                             Create Account
                         </Link>
-                        <Link href="/" className="text-sm/6 font-semibold text-gray-900 hover:text-gray-700">
+                        <Link href="/" className="text-sm/6 font-semibold text-black hover:text-gray-700">
                             Get Started{" "}<span aria-hidden="true">&rarr;</span>
                         </Link>
                     </div>

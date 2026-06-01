@@ -5,9 +5,9 @@ import { memo } from 'react'
 
 const navigation = [
     { name: 'Problemset', href: '/problems', current: false },
-    { name: 'JS Cheat Sheet', href: '/js-cheat-sheet', current: false },
-    { name: 'JS Playground', href: '/js-playground', current: false },
-    { name: 'TS Playground', href: '/ts-playground', current: false },
+    { name: 'Cheat Sheet', href: '/js-cheat-sheet', current: false },
+    { name: 'Playground', href: '/js-playground', current: false },
+    { name: 'Prep', href: '/ts-playground', current: false },
     { name: 'About', href: '/about', current: false },
 ]
 
