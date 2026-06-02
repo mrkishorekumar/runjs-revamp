@@ -8,6 +8,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { useEffect, useState, memo } from 'react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image';
 
 const navigation = [
     { name: 'Problemset', href: '/problems', current: false },
@@ -26,7 +27,7 @@ function Navbar() {
     const user = useAuth()?.user
     const isGuest = user?.isAnonymous === true
     const showProfileDropdown = Boolean(user && !isGuest)
-    const profileImage = user?.photoURL || "https://images.unsplash.com/vector-1742875355318-00d715aec3e8?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    const profileImage = user?.photoURL || "/placeholder-profile-icon.avif"
     const [isScrolled, setIsScrolled] = useState(false)
 
     useEffect(() => {
@@ -72,10 +73,12 @@ function Navbar() {
                     </div>
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                         <Link href="/" className="flex shrink-0 items-center">
-                            <img
+                            <Image
+                                width={32}
+                                height={32}
                                 alt="Your Company"
-                                src="https://runjs.rigial.com/runjs.in.webp"
-                                className="h-8 w-auto rounded"
+                                src="/jsleetcode.webp"
+                                className="rounded"
                             />
                         </Link>
                         <div className="hidden sm:ml-6 sm:block">
@@ -113,10 +116,12 @@ function Navbar() {
                                 <MenuButton className="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
                                     <span className="absolute -inset-1.5" />
                                     <span className="sr-only">Open user menu</span>
-                                    <img
+                                    <Image
+                                        width={32}
+                                        height={32}
                                         alt="Profile"
                                         src={profileImage}
-                                        className="size-8 rounded-full bg-gray-800 outline -outline-offset-1 outline-white/10"
+                                        className="rounded-full"
                                     />
                                 </MenuButton>
 
@@ -159,10 +164,12 @@ function Navbar() {
                             >
                                 <span className="absolute -inset-1.5" />
                                 <span className="sr-only">Open login page</span>
-                                <img
+                                <Image
                                     alt="Login"
                                     src={profileImage}
-                                    className="size-8 rounded-full bg-gray-800 outline -outline-offset-1 outline-white/10"
+                                    width={32}
+                                    height={32}
+                                    className="rounded-full"
                                 />
                             </button>
                         )}

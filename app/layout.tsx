@@ -1,17 +1,15 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/providers/auth-provider";
+import { rootMetadata } from "@/lib/metadata";
+import { ToastContainer } from 'react-toastify';
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "JSLeetCode - Javascript Online Programming Learning Platform",
-  description: "Level up your Javascript skills and quickly land a job. This is the best place to expand your javascript knowledge and get prepared for your next interview.",
-};
+export const metadata = rootMetadata;
 
 export default function RootLayout({
   children,
@@ -27,6 +25,7 @@ export default function RootLayout({
         <AuthProvider>
           {children}
         </AuthProvider>
+        <ToastContainer />
       </body>
     </html>
   );

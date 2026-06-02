@@ -1,14 +1,11 @@
 import Footer from "@/components/ui/Footer";
 import DynamicBackgroundPattern from "@/components/ui/GridBackground";
 import Navbar from "@/components/ui/Navbar";
-import { Metadata } from "next";
 import Link from "next/link";
 import { memo } from "react";
+import { notFoundMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-    title: 'Page Not Found - JSLeetCode',
-    description: 'The page you are looking for does not exist or has been moved.',
-};
+export const metadata = notFoundMetadata;
 
 function NotFound() {
     return (

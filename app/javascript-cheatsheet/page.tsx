@@ -1,14 +1,11 @@
-import type { Metadata } from 'next';
 import Table from '@/components/ui/Table';
 import { IJSCheatSheet } from '@/types/Json';
 import DynamicBackgroundPattern from '@/components/ui/GridBackground';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
+import { jsCheatSheetMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-    title: 'JavaScript (JS) Cheat Sheet Online - JSLeetCode',
-    description: 'JavaScript Cheat Seet contains useful code examples on a single page. It is a quick reference guide for JavaScript developers to easily find code snippets and examples for common programming tasks and concepts.',
-};
+export const metadata = jsCheatSheetMetadata;
 
 export default async function JSCheatSheet() {
 

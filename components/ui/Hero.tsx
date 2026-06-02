@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { memo } from 'react'
 
@@ -5,7 +6,7 @@ function Hero() {
     return (
         <div className="relative isolate px-6 pt-14 lg:px-8">
             <div className="mx-auto max-w-2xl py-24 sm:py-32 lg:py-40">
-                <img width="112" height="16" src="https://runjs.rigial.com/users.webp" alt="RunJS Users" className='mx-auto mb-4' />
+                <Image width={112} height={16} src="/users.webp" alt="Users" className='mx-auto mb-4' />
                 <p className="mb-4 text-base text-gray-700 text-center">{`{ Trusted by 1K+ developers }`}</p>
                 <div className="hidden sm:mb-8 sm:flex sm:justify-center">
                     <div className="relative rounded-full px-4 py-1 text-sm/6 text-black ring-1 ring-black">

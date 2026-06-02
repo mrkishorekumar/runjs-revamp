@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation'
 import { memo } from 'react'
 import { signInWithPopup } from 'firebase/auth'
 import { auth, googleProvider, githubProvider } from '@/lib/firebase-client'
+import { toastError } from '@/lib/toast'
+import { sanitizeErrorMessage } from '@/utils/firebase-auth-code'
 
 function SocialMediaLogin() {
     const router = useRouter()
@@ -15,6 +17,8 @@ function SocialMediaLogin() {
             router.push('/')
         } catch (error) {
             console.error('Google login failed', error)
+            const message = `Google login failed ${sanitizeErrorMessage(error)}`
+            toastError(message)
         }
     }
 
@@ -24,6 +28,8 @@ function SocialMediaLogin() {
             router.push('/')
         } catch (error) {
             console.error('GitHub login failed', error)
+            const message = `GitHub login failed ${sanitizeErrorMessage(error)}`
+            toastError(message)
         }
     }
 
@@ -44,8 +50,12 @@ function SocialMediaLogin() {
                                 onClick={handleGoogleLogin}
                                 className="cursor-pointer group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 hover:border-black focus:bg-blue-50 active:bg-blue-100">
                                 <div className="flex items-center space-x-4 justify-center">
-                                    <img src="https://www.svgrepo.com/show/475656/google-color.svg"
-                                        className="w-5" alt="google logo" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 48" className="w-5">
+                                        <path fill="#FBBC05" d="M9.827 24c0-1.524.253-2.986.705-4.356l-7.909-6.04A23.77 23.77 0 0 0 .214 24c0 3.737.867 7.261 2.406 10.388l7.905-6.051A13.95 13.95 0 0 1 9.827 24z" />
+                                        <path fill="#EB4335" d="M23.714 10.133c3.311 0 6.302 1.173 8.652 3.093L39.202 6.4C35.036 2.773 29.695.533 23.714.533c-9.287 0-17.269 5.311-21.091 13.071l7.909 6.04c1.822-5.532 7.017-9.511 13.182-9.511z" />
+                                        <path fill="#34A853" d="M23.714 37.867c-6.165 0-11.359-3.979-13.182-9.511l-7.909 6.038c3.822 7.761 11.804 13.072 21.091 13.072 5.732 0 11.204-2.035 15.311-5.848l-7.507-5.804c-2.118 1.334-4.785 2.053-7.804 2.053z" />
+                                        <path fill="#4285F4" d="M46.145 24c0-1.387-.213-2.88-.534-4.267H23.714V28.8h12.604c-.63 3.091-2.346 5.468-4.8 7.014l7.507 5.804C43.339 37.614 46.145 31.649 46.145 24z" />
+                                    </svg>
                                     <span
                                         className="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">Continue
                                         with Google

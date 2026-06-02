@@ -2,13 +2,10 @@ import SocialMediaLogin from '@/components/core/SocialMediaLogin'
 import Footer from '@/components/ui/Footer'
 import DynamicBackgroundPattern from '@/components/ui/GridBackground'
 import Navbar from '@/components/ui/Navbar'
-import { Metadata } from 'next'
 import { memo } from 'react'
+import { loginMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-    title: 'Log In to JSLeetCode - Access Your Playgrounds and Save Your Code',
-    description: 'Sign in to your JSLeetCode account to securely save your coding playgrounds, track your JavaScript interview preparation progress, and sync your workspace across devices.',
-};
+export const metadata = loginMetadata;
 
 function Login() {
     return (
