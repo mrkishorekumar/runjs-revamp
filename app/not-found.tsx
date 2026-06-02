@@ -1,34 +1,47 @@
+import Footer from "@/components/ui/Footer";
+import DynamicBackgroundPattern from "@/components/ui/GridBackground";
+import Navbar from "@/components/ui/Navbar";
 import { Metadata } from "next";
 import Link from "next/link";
+import { memo } from "react";
 
 export const metadata: Metadata = {
     title: 'Page Not Found - JSLeetCode',
     description: 'The page you are looking for does not exist or has been moved.',
 };
 
-export default function Example() {
+function NotFound() {
     return (
-        <main className="grid min-h-full place-items-center px-6 py-24 sm:py-32 lg:px-8">
-            <div className="text-center">
-                <p className="text-base font-semibold text-indigo-400">404</p>
-                <h1 className="mt-4 text-5xl font-semibold tracking-tight text-balance sm:text-7xl">
-                    Page not found
-                </h1>
-                <p className="mt-6 text-lg font-medium text-pretty sm:text-xl/8">
-                    Sorry, we couldn’t find the page you’re looking for.
-                </p>
-                <div className="mt-10 flex items-center justify-center gap-x-6">
-                    <Link
-                        href="/"
-                        className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-                    >
-                        Go back home
-                    </Link>
-                    <Link href="/contact" className="text-sm font-semibold">
-                        Contact support <span aria-hidden="true">&rarr;</span>
-                    </Link>
-                </div>
-            </div>
-        </main>
+        <DynamicBackgroundPattern patternType="Mask">
+            <section className="flex flex-col min-h-screen">
+                <Navbar />
+                <main className="flex flex-1 items-center justify-center px-4">
+                    <div className="max-w-md text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="mx-auto size-20 text-gray-400">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"></path>
+                        </svg>
+
+                        <h2 className="mt-6 text-2xl font-bold text-gray-900">Page Not Found</h2>
+
+                        <p className="mt-4 text-pretty text-gray-700">
+                            The page you are looking for does not exist or has been moved.
+                        </p>
+
+                        <Link href="/" type="button" className="mt-6 block w-full rounded-lg bg-black px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-gray-700">
+                            Go to Homepage
+                        </Link>
+
+                        <p className="mt-6 text-sm text-gray-700">
+                            <Link href="/report-issue" className="underline hover:text-gray-900">Report an issue</Link> or {" "}
+                            <Link href="/contact-us" className="underline hover:text-gray-900">Contact Us</Link>
+                        </p>
+                    </div>
+                </main>
+                <Footer />
+            </section>
+        </DynamicBackgroundPattern>
     )
 }
+
+
+export default memo(NotFound);

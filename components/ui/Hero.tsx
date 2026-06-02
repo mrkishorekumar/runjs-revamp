@@ -5,8 +5,10 @@ function Hero() {
     return (
         <div className="relative isolate px-6 pt-14 lg:px-8">
             <div className="mx-auto max-w-2xl py-24 sm:py-32 lg:py-40">
+                <img width="112" height="16" src="https://runjs.rigial.com/users.webp" alt="RunJS Users" className='mx-auto mb-4' />
+                <p className="mb-4 text-base text-gray-700 text-center">{`{ Trusted by 1K+ developers }`}</p>
                 <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                    <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                    <div className="relative rounded-full px-4 py-1 text-sm/6 text-black ring-1 ring-black">
                         Master Javascript Programming with JSLeetCode!
                     </div>
                 </div>
@@ -20,8 +22,8 @@ function Hero() {
 
                     <div className="mt-10 flex items-center justify-center gap-x-6">
                         <Link
-                            href="/"
-                            className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                            href="/login"
+                            className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-gray-600"
                         >
                             Create Account
                         </Link>
