@@ -25,7 +25,7 @@ export default async function JSCheatSheet() {
     return (
         <DynamicBackgroundPattern patternType="Dot">
             <Navbar />
-            <main className="container mx-auto px-4 pb-8 mt-8">
+            <main className="container mx-auto px-4 pb-8 mt-20">
                 <h1 className="my-2 text-xl">JavaScript Cheat Sheet</h1>
                 <h5 className="text-gray-500 my-2 mb-8">JavaScript Cheat Sheet contains useful code examples on a single page. It is a quick reference guide for JavaScript developers to easily find code snippets and examples for common programming tasks and concepts.</h5>
                 {
